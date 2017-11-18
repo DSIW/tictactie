@@ -1,6 +1,4 @@
-#!/usr/bin/env ruby
-# encoding: utf-8
-
+require "tictactie/version"
 require 'colored'
 
 module TicTacToe
@@ -116,5 +114,3 @@ module TicTacToe
     end
   end
 end
-
-TicTacToe::Game.new
