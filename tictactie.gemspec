@@ -5,7 +5,7 @@ require 'tictactie/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "tictactie"
-  spec.version       = Tictactie::VERSION
+  spec.version       = TicTacTie::VERSION
   spec.authors       = ["DSIW"]
   spec.email         = ["dsiw@dsiw-it.de"]
 

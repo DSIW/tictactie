@@ -1,7 +1,7 @@
 require "tictactie/version"
 require 'colored'
 
-module TicTacToe
+module TicTacTie
   class Player
     attr_accessor :symbol
     def initialize(symbol)

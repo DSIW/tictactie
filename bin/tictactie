@@ -3,4 +3,4 @@
 require "bundler/setup"
 require "tictactie"
 
-TicTacToe::Game.new
+TicTacTie::Game.new
