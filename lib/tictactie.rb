@@ -1,14 +1,8 @@
 require "tictactie/version"
+require "tictactie/player"
 require 'colored'
 
 module TicTacTie
-  class Player
-    attr_accessor :symbol
-    def initialize(symbol)
-      @symbol = symbol
-    end
-  end
-
   class Board
     attr_reader :spaces
     def initialize
