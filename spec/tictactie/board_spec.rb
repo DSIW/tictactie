@@ -3,11 +3,6 @@ require "spec_helper"
 RSpec.describe TicTacTie::Board do
   let(:board) { described_class.new }
 
-  before do
-    # TODO: refactor code
-    board.instance_variable_set(:@current_turn, 0)
-  end
-
   describe "#to_s" do
     context 'with empty spaces' do
       it 'returns' do
@@ -57,11 +52,10 @@ X | 1 | 2
     end
   end
 
-  describe "#check_space" do
+  describe "#free_at?" do
     context 'space is free' do
       it 'places stone on space' do
-        expect(board).to receive(:place_symbol)
-        board.check_space(0, 'Y')
+        expect(board.free_at?(0)).to be true
       end
     end
 
@@ -71,8 +65,7 @@ X | 1 | 2
       end
 
       it 'doesn\' place stone on space' do
-        expect(board).not_to receive(:place_symbol)
-        board.check_space(0, 'Y')
+        expect(board.free_at?(0)).to be false
       end
     end
   end

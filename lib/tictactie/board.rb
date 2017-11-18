@@ -20,13 +20,8 @@ module TicTacTie
       output + "\n"
     end
 
-    def check_space(cell, sym)
-      if spaces[cell].nil?
-        place_symbol(cell, sym)
-        @current_turn += 1
-      else
-        puts "Space unavailable! Please select another cell"
-      end
+    def free_at?(cell)
+      spaces[cell].nil?
     end
 
     def place_symbol(cell, sym)
