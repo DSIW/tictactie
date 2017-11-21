@@ -3,4 +3,12 @@
 require "bundler/setup"
 require "tictactie"
 
-TicTacTie::Game.new
+begin
+  begin
+    TicTacTie::Game.new.play
+  end while TicTacTie::Cli.play_again?
+rescue Interrupt => e
+  # do nothing
+ensure
+  puts "Goodbye".cyan.bold
+end

@@ -69,48 +69,4 @@ X | 1 | 2
       end
     end
   end
-
-  describe "#tie" do
-    context 'with stones are not in a row' do
-      before do
-        board.place_symbol(0, 'X')
-        board.place_symbol(4, 'X')
-        board.place_symbol(8, 'X')
-      end
-
-      it 'should return false' do
-        expect(board.tie).not_to be true
-      end
-    end
-
-    context 'with stones in a row from different players' do
-      before do
-        board.place_symbol(0, 'X')
-        board.place_symbol(4, 'Y')
-        board.place_symbol(8, 'X')
-      end
-
-      it 'should return false' do
-        expect(board.tie).not_to be true
-      end
-    end
-
-    context 'with board is full and there is no winner' do
-      before do
-        board.place_symbol(0, 'a')
-        board.place_symbol(1, 'b')
-        board.place_symbol(2, 'c')
-        board.place_symbol(3, 'd')
-        board.place_symbol(4, 'e')
-        board.place_symbol(5, 'f')
-        board.place_symbol(6, 'g')
-        board.place_symbol(7, 'h')
-        board.place_symbol(8, 'i')
-      end
-
-      it 'should return true' do
-        expect(board.tie).to be true
-      end
-    end
-  end
 end
