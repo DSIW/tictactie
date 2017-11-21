@@ -10,11 +10,10 @@ module TicTacTie
 
     def play
       loop do
-        puts "Player #{current_player}'s move:".green
-        puts @board
+        print_board
 
         if @board.done?
-          puts status.cyan
+          print_status
           break
         end
 
@@ -22,14 +21,32 @@ module TicTacTie
       end
     end
 
+    def print_board
+      raise NoImplementedError
+    end
+
+    def print_status
+      raise NoImplementedError
+    end
+
+    def ask_choice(player)
+      raise NoImplementedError
+    end
+
+    def print_unavailable_space
+      raise NoImplementedError
+    end
+
+    private
+
     def move(player)
-      choice = Cli.ask("Where would you like to move 'player #{player.symbol}'?".red).to_i
+      choice = ask_choice(player)
 
       if @board.free_at?(choice)
         @board.place_symbol(choice, player.symbol)
         @current_turn += 1
       else
-        puts "Space unavailable! Please select another cell"
+        print_unavailable_space
       end
     end
 
