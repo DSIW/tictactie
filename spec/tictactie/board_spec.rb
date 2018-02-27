@@ -6,13 +6,13 @@ RSpec.describe TicTacTie::Board do
   describe "#to_s" do
     context 'with empty spaces' do
       it 'returns' do
-        expect(board.to_s).to eq <<-BOARD
-0 | 1 | 2
------------
-3 | 4 | 5
------------
-6 | 7 | 8
-    BOARD
+        expect(board.to_s).to eq <<~BOARD
+                                    0 | 1 | 2
+                                    -----------
+                                    3 | 4 | 5
+                                    -----------
+                                    6 | 7 | 8
+                                    BOARD
       end
     end
 
@@ -23,13 +23,13 @@ RSpec.describe TicTacTie::Board do
       end
 
       it 'returns' do
-        expect(board.to_s).to eq <<-BOARD
-X | 1 | 2
------------
-3 | 4 | 5
------------
-6 | 7 | X
-    BOARD
+        expect(board.to_s).to eq <<~BOARD
+                                    X | 1 | 2
+                                    -----------
+                                    3 | 4 | 5
+                                    -----------
+                                    6 | 7 | X
+                                    BOARD
       end
     end
 
@@ -41,13 +41,13 @@ X | 1 | 2
       end
 
       it 'returns' do
-        expect(board.to_s).to eq <<-BOARD
-X | 1 | 2
------------
-3 | X | 5
------------
-6 | 7 | X
-    BOARD
+        expect(board.to_s).to eq <<~BOARD
+                                    X | 1 | 2
+                                    -----------
+                                    3 | X | 5
+                                    -----------
+                                    6 | 7 | X
+                                    BOARD
       end
     end
   end
