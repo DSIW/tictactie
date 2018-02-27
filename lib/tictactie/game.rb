@@ -1,5 +1,7 @@
 module TicTacTie
   class Game
+    attr_accessor :board
+    
     def initialize
       @player1 = Player.new("X")
       @player2 = Player.new("O")
