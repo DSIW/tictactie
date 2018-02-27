@@ -17,9 +17,10 @@ module TicTacTie
         if @board.done?
           print_status
           break
+        else
+          @current_turn += 1
+          move(current_player)
         end
-
-        move(current_player)
       end
     end
 
@@ -46,7 +47,6 @@ module TicTacTie
 
       if @board.free_at?(choice)
         @board.place_symbol(choice, player.symbol)
-        @current_turn += 1
       else
         print_unavailable_space
       end
