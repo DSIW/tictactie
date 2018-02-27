@@ -50,6 +50,10 @@ module TicTacTie
       end
     end
 
+    def ask_choice(player)
+      TicTacTie::CliGame.ask("Where would you like to move 'player #{player.symbol}'?".red).to_i
+    end
+
     def status
       if @board.player_won?
         "Congratulations, player #{current_player} won!"

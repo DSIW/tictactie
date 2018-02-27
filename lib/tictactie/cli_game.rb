@@ -33,10 +33,6 @@ module TicTacTie
       puts status.cyan
     end
 
-    def ask_choice(player)
-      self.class.ask("Where would you like to move 'player #{player.symbol}'?".red).to_i
-    end
-
     def print_unavailable_space
       puts "Space unavailable! Please select another cell"
     end
