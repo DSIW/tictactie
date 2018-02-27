@@ -52,6 +52,20 @@ RSpec.describe TicTacTie::Board do
     end
   end
 
+  describe "done?" do
+    context 'place X\'s in a row' do
+      before do
+        board.place_symbol(0, 'X')
+        board.place_symbol(4, 'X')
+        board.place_symbol(8, 'X')
+      end
+
+      it 'returns' do
+        expect(board.done?).to be_truthy
+      end
+    end
+  end
+
   describe "#free_at?" do
     context 'space is free' do
       it 'places stone on space' do
