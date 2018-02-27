@@ -19,6 +19,11 @@ module TicTacTie
       end
     end
 
+    def self.ask(message)
+      puts message
+      gets.chomp
+    end
+
     def print_board
       puts "Player #{current_player}'s move:".green
       puts @board
@@ -40,11 +45,6 @@ module TicTacTie
 
     def self.play_again?
       ask("Play again? (yes or no)".yellow) =~ /^y/i
-    end
-
-    def self.ask(message)
-      puts message
-      gets.chomp
     end
   end
 end
